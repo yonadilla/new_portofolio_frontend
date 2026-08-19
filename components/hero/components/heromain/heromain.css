@@ -1,0 +1,14 @@
+.hero {
+    font-family: "PP Mori";
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.hero_main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

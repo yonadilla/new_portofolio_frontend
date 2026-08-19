@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Questrial&family=Sora:wght@100..800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --black-forest: #134611ff;
+  --india-green: #3e8914ff;
+  --medium-jungle: #3da35dff;
+  --light-green: #96e072ff;
+  --frosted-mint: #e8fccfff;
+  --background-green: rgb(242, 251, 232, 0.6);
+
+  --global-padding: 1.25rem;
+}
+
+
+@font-face {
+  font-family: 'pixy';
+  src: url('/pixy/PIXY.otf') format('opentype');
+  font-weight: 500;
+  line-height: 1;
+  font-style: normal;
+  
+}
+
+
+/* --- EXTRA LIGHT --- */
+@font-face {
+  font-family: 'PP Mori';
+  src: url('/fonts/ppmori/PPMori-Extralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Mori';
+  src: url('/public/pp-mori-free-for-personal-use-v10/PPMori/PPMori-Extralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Mori';
+  src: url('/public/pp-mori-free-for-personal-use-v10/PPMori/PPMori-ExtralightItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* --- REGULAR --- */
+@font-face {
+  font-family: 'PP Mori';
+  src: url('/public/pp-mori-free-for-personal-use-v10/PPMori/PPMori-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Mori';
+  src: url('/public/pp-mori-free-for-personal-use-v10/PPMori/PPMori-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* --- SEMI BOLD --- */
+@font-face {
+  font-family: 'PP Mori';
+  src: url('/public/pp-mori-free-for-personal-use-v10/PPMori/PPMori-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Mori';
+  src: url('/public/pp-mori-free-for-personal-use-v10/PPMori/PPMori-SemiBoldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Sangat penting! */
+}
+html {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style : normal;
+}
+
+
+body {
+  background: var(--background-green);
+  color: var(--foreground);
+  min-height: 100vh;
+  width: 100%;
+  word-break: keep-all;
+}
+
+.wrapper {
+  overflow: hidden;
+  padding: var(--global-padding);
+  width: 100%;
+  position: relative;
+}
+
+
+.rounded-bg {
+
+    border-radius: 100vmax;
+    color: #1e1e1e;
+    height: var(--height, 3rem);
+    padding: 0 var(--padding-inline, 1.5rem);
+    width: auto;
+    --font-size: 1.125rem;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    font-family: PP Mori, sans-serif;
+    font-size: var(--font-size, 1.25rem);
+    font-style: normal;
+    font-weight: var(--font-weight, 600);
+    justify-content: center;
+    letter-spacing: var(--letter-spacing, normal);
+    line-height: var(--line-height, 1.2);
+    transition: background-color 0.3s ease;
+}
+
+.circle-bg {
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    height: var(--radius, 3rem);
+    justify-content: center;
+    overflow: hidden;
+    width: var(--radius, 3rem);
+}

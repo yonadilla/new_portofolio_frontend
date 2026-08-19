@@ -1,0 +1,40 @@
+.work_container {
+  padding-top: 50vh;
+  position: relative;
+  padding-bottom: 10rem;
+  min-height: 100vh;
+}
+
+.work_title {
+  font-size: 5.5rem;
+  text-transform: uppercase;
+  line-height: 0.885;
+  font-weight: 500;
+}
+
+.work_card_container {
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.work_list_wrapper {
+  margin-left: -0.625rem;
+}
+
+@media (min-width: 700px) {
+  .c-section {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+  }
+
+  .work_layout {
+    margin-left: -1.875rem;
+    position: relative;
+  }
+
+  .work_card_container .work_card_layout {
+    padding-left: 0.625rem;
+  }
+}

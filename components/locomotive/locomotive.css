@@ -1,0 +1,32 @@
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-dragging {
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+/* Container utama yang akan diberi MATRIX3D */
+.o-scroll {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.c-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.o-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}

@@ -1,0 +1,9 @@
+.hero_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.hero_stack {
+    padding-right: 1rem;
+}

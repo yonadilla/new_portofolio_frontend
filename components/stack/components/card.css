@@ -1,0 +1,28 @@
+.card_container {
+    margin-inline: calc(var(--global-padding) * -1);
+    
+}
+
+.card_stack_container {
+    padding: var(--global-padding);
+}
+
+.card_title {
+    font-size: 3.5rem;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 3rem;
+}
+
+.card_overview {
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 200;
+    margin-bottom: 3rem;
+}
+
+.card_stack {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+}

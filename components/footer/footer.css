@@ -1,0 +1,28 @@
+.footer_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: black;
+  color: white;
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+  margin-bottom: -1.25rem;
+}
+
+.footer_nav,
+.footer_sosmed {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: start;
+}
+
+.footer_sosmed {
+    margin-bottom: 4rem;
+}
+
+
+.footer_addr_clock {
+    display: flex;
+    justify-content: space-between;
+}
