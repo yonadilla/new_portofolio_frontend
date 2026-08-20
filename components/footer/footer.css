@@ -1,3 +1,7 @@
+html[current-page="/"] .footer_container{
+  display: none;
+}
+
 .footer_container {
   position: relative;
   display: flex;

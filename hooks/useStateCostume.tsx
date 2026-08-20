@@ -11,7 +11,7 @@ export default function useStateCostume() {
   const close = () => setIsOpen(false);
 
   useEffect(() => {
-    const root = document.documentElement; // Menargetkan tag <html>
+    const root = document.documentElement; 
 
     if (isOpen) {
       root.classList.add("nav_open", "no-scroll");
@@ -21,11 +21,14 @@ export default function useStateCostume() {
       root.setAttribute("data-nav", "closed");
     }
 
+    root.setAttribute("current-page", pathname)
+
+
     return () => {
       root.classList.remove("nav_open", "no-scroll");
       root.removeAttribute("data-nav");
     };
-  }, [isOpen]);
+  }, [isOpen, pathname]);
 
   if (prevPathname !== pathname) {
     setPrevPathname(pathname);

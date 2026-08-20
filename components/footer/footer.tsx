@@ -6,7 +6,7 @@ export default function Footer() {
 
 
   return (
-    <footer data-scroll-section className="footer_container">
+    <footer className="footer_container">
       <div  className="footer_scroll">
         <div className="footer_nav">
           <div>

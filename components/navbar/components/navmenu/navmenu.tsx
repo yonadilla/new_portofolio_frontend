@@ -11,6 +11,8 @@ type NavmenuProps = {
   setOpen: (value: boolean) => void;
 };
 
+const TOTAL_COLS = 5;
+
 export default function Navmenu({ open, setOpen }: NavmenuProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLDivElement>(null);
@@ -39,7 +41,7 @@ export default function Navmenu({ open, setOpen }: NavmenuProps) {
       gsap.fromTo(
         closeRef.current,
         { x: "100%" },
-        { x: "0%", duration: 0.1, ease: "power2.out", },
+        { x: "0%", duration: 0.1, ease: "power2.out" },
       );
 
       gsap.fromTo(
@@ -54,7 +56,6 @@ export default function Navmenu({ open, setOpen }: NavmenuProps) {
           delay: 0.2,
         },
       );
-
     } else {
       gsap.to(closeRef.current, {
         x: "100%",
@@ -79,39 +80,38 @@ export default function Navmenu({ open, setOpen }: NavmenuProps) {
 
       gsap.to(links, { opacity: 0 });
     }
+
+    console.log(cols)
   }, [open]);
 
   return (
     <nav className="navmenu_container">
-      <button onClick={() => setOpen(true)} className={`navmenu_button || navmenu_header_link`}>
+      <button
+        onClick={() => setOpen(true)}
+        className={`navmenu_button || navmenu_header_link`}
+      >
         <div className="menu_svg">
           <Image src={"/line2.svg"} alt="menuLine" width={70} height={50} />
         </div>
-        <span>
-          menu
-        </span>
+        <span>menu</span>
       </button>
 
       <div
         ref={containerRef}
         className={`navmenu_link_container ${!open ? "pointer-events-none" : "pointer-events-all"}`}
-        style={{ opacity: 0}}
+        style={{ opacity: 0 }}
       >
         <div className="navmenu_bg">
-          <div
-            ref={(el) => {
-              bgColsRef.current[0] = el;
-            }}
-            className="menu_bg_col"
-            style={{ transform: "translate3d(0, -100%, 0)" }}
-          />
-          <div
-            ref={(el) => {
-              bgColsRef.current[1] = el;
-            }}
-            className="menu_bg_col"
-            style={{ transform: "translate3d(0, -100%, 0)" }}
-          />
+       {Array.from({ length: TOTAL_COLS }).map((_, index) => (
+      <div
+        key={index}
+        ref={(el) => {
+          bgColsRef.current[index] = el;
+        }}
+        className="menu_bg_col"
+        style={{ transform: "translate3d(0, -100%, 0)" }}
+      />
+    ))}
         </div>
 
         <div className="navmenu_inner">
@@ -159,7 +159,9 @@ export default function Navmenu({ open, setOpen }: NavmenuProps) {
             </li>
           </ul>
         </div>
-        <div className={`navmenu_footer_container  ${open ? "navmenu_open" : ""}`}>
+        <div
+          className={`navmenu_footer_container  ${open ? "navmenu_open" : ""}`}
+        >
           <div className="navmenu_footer">
             <div className="navmenu_time">21:17</div>
             <div className="navmenu_addr">Blora, Indonesia</div>

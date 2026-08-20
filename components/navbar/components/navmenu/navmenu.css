@@ -175,6 +175,10 @@
   transform: translate3d(0, -100%, 0);
 }
 
+.menu_bg_col:nth-child(n + 3) {
+  display: none;
+}
+
 .navmenu_footer_container {
   z-index: 10;
   flex-direction: column;
@@ -217,7 +221,11 @@
 
 @media (min-width: 699px) {
   .menu_bg_col {
-    width: 50%;
+    width: 25%;
+  }
+  
+  .menu_bg_col:nth-child(n + 3) {
+    display: block;
   }
 
   .link {
