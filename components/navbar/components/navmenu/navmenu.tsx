@@ -5,6 +5,7 @@ import gsap from "gsap";
 import "./navmenu.css";
 import SymbolX from "@/public/symbolx";
 import Image from "next/image";
+import useDirectionMouse from "@/hooks/useDirectionMouse";
 
 type NavmenuProps = {
   open: boolean;
@@ -19,12 +20,14 @@ export default function Navmenu({ open, setOpen }: NavmenuProps) {
   const bgColsRef = useRef<(HTMLDivElement | null)[]>([]);
   const linksRef = useRef<(HTMLAnchorElement | null)[]>([]);
 
+  const containerNavRef = useDirectionMouse<HTMLUListElement>(".link_text");
+
+
   useEffect(() => {
     if (!containerRef.current || !closeRef.current) return;
 
     const cols = bgColsRef.current.filter(Boolean);
     const links = linksRef.current.filter(Boolean);
-
     if (open) {
       gsap.to(containerRef.current, {
         opacity: 1,
@@ -65,8 +68,8 @@ export default function Navmenu({ open, setOpen }: NavmenuProps) {
 
       gsap.to([...cols].reverse(), {
         y: "-100%",
-        duration: 0.1,
-        ease: "power2.in",
+        duration: 0.2,
+        ease: "power2.out",
         stagger: 0.08,
         delay: 0.1,
       });
@@ -83,6 +86,7 @@ export default function Navmenu({ open, setOpen }: NavmenuProps) {
 
     console.log(cols)
   }, [open]);
+
 
   return (
     <nav className="navmenu_container">
@@ -119,14 +123,13 @@ export default function Navmenu({ open, setOpen }: NavmenuProps) {
             ref={closeRef}
             onClick={() => setOpen(false)}
             className="close_button"
-            style={{ transform: "translate3d(100%, 0, 0)" }}
           >
             <div className="button_x">
               <SymbolX />
             </div>
           </div>
 
-          <ul className="link_container">
+          <ul ref={containerNavRef} className="link_container">
             <li className="link">
               <a
                 ref={(el) => {
@@ -139,8 +142,15 @@ export default function Navmenu({ open, setOpen }: NavmenuProps) {
                   transform: "perspective(80vw) rotateX(-90deg)",
                 }}
               >
-                Work
+               <span>Work</span>
+               <div className="link_overlay">
+                <div className="link_overlay_inner">
+                  <span>Try out</span>
+                  <span>Try out</span>
+                </div>
+              </div>
               </a>
+              
             </li>
             <li className="link">
               <a
@@ -154,7 +164,13 @@ export default function Navmenu({ open, setOpen }: NavmenuProps) {
                   transform: "perspective(80vw) rotateX(-90deg)",
                 }}
               >
-                Aboutme
+                <span>Aboutme</span> 
+                <div className="link_overlay">
+                <div className="link_overlay_inner">
+                  <span>Try out</span>
+                  <span>Try out</span>
+                </div>
+              </div>
               </a>
             </li>
           </ul>
@@ -167,9 +183,9 @@ export default function Navmenu({ open, setOpen }: NavmenuProps) {
             <div className="navmenu_addr">Blora, Indonesia</div>
           </div>
           <div className="navmenu_footer_sosmed">
-            <div className="navmenu_sosmed">halo</div>
-            <div className="navmenu_sosmed">halo</div>
-            <div className="navmenu_sosmed">halo</div>
+            <div className="navmenu_sosmed">X</div>
+            <div className="navmenu_sosmed">IG</div>
+            <div className="navmenu_sosmed">IN</div>
           </div>
         </div>
       </div>

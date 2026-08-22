@@ -15,11 +15,11 @@
     font-family: "pixy";
     line-height: 0.6;
     font-size: 5rem;
-    transition: color 0.3s ease;
-    -webkit-transition: color 0.3s ease;
-    -moz-transition: color 0.3s ease;
-    -ms-transition: color 0.3s ease;
-    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease 0.2s;
+    -webkit-transition: color 0.3s ease 0.2s;
+    -moz-transition: color 0.3s ease 0.2s;
+    -ms-transition: color 0.3s ease 0.2s;
+    -o-transition: color 0.3s ease 0.2s;
 }
 
 [data-nav = "closed"] .logo {
